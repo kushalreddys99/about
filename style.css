@@ -1,0 +1,320 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Header and Hero Section */
+  header {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin:0;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+  }
+  
+  .hero .btn {
+    text-decoration: none;
+    color: white;
+    background: #ff4b2b;
+    padding: 5px 15px;
+
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero .btn:hover {
+    background: #ff1d00;
+  }
+  
+  /* Navigation */
+  nav {
+    margin-top: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  
+  /* Intro Section */
+  .intro {
+    padding: 20px;
+    text-align: center;
+    background: #f9f9f9;
+  }
+  
+  .intro h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .intro p {
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  /* Features Section */
+  .features {
+    padding: 20px;
+    background: #fff;
+  }
+  
+  .features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .feature-item {
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-item img {
+    max-width: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-item h3 {
+    color: #ff7e5f;
+    margin-bottom: 10px;
+  }
+  
+  /* Call-to-Action Section */
+  .cta {
+    background: #ff7e5f;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .cta .btn {
+    text-decoration: none;
+    color: #ff7e5f;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .cta .btn:hover {
+    background: #ffe5d9;
+  }
+  .location-cart {
+    margin: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .location-cart h2, .location-cart h3 {
+    color: #ff7e5f;
+  }
+  
+  .location-cart ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .location-cart li {
+    margin-bottom: 10px;
+  }
+  
+  .location-cart button {
+    margin-left: 10px;
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .location-cart button:hover {
+    background: #ff1d00;
+  }
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styling */
+  header {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav {
+    margin-top: 0px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main Content Styling */
+  main {
+    padding:5px;
+  }
+  
+  /* Contact Form Styles */
+  form {
+    max-width: 300px;
+    margin: 10px auto;
+    background: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input, form textarea, form button {
+    width: 100%;
+    padding: 2px;
+    margin-bottom: 1px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    resize: vertical;
+    height: 50px;
+  }
+  
+  form button {
+    background: #ff7e5f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  form button:hover {
+    background: #ff4b2b;
+  }
+  
+  /* Map Section Styling */
+  #map {
+    height: 400px; /* Adjust map height for better visibility */
+    width: 100%; /* Make the map take full width of the container */
+    margin-top: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section Titles */
+  h2, h3 {
+    text-align: center;
+    color: #ff7e5f;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 760px) {
+    form, #map {
+      width: 90%; /* Reduce width for smaller screens */
+      margin: 0 auto; /* Center align for small devices */
+    }
+  
+    form button {
+      width: auto; /* Adjust button width */
+    }
+  }
+  .cart {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  max-width: 400px;
+}
+
+.cart h2 {
+  color: #ff7e5f;
+}
+
+.cart ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart button {
+  background-color: #ff4b2b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  background-color: #ff1d00;
+}
+
+    
+
+
+
+
+
+
+
+
+

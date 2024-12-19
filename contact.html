@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Arisor Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Form Styles */
+    form {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    form textarea {
+      height: 100px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff4b2b;
+      color: white;
+      border: none;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #ff1d00;
+    }
+
+    /* Map Section */
+    #map {
+      height: 400px;
+      width: 100%;
+      margin-top: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .location {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .location p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Get in Touch Section -->
+    <h2>Get in Touch</h2>
+    <form action="send-message.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <!-- Map Section -->
+    <section class="location">
+      <h2>Our Location</h2>
+      <p>We are located at CMR Institute of Technology, Bengaluru.</p>
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Arisor Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Leaflet.js Script -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map
+    const map = L.map('map').setView([12.934533, 77.619234], 15); // CMRIT Bengaluru coordinates
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Add a marker for the location
+    L.marker([12.934533, 77.619234]).addTo(map)
+      .bindPopup('CMRIT Bengaluru')
+      .openPopup();
+  </script>
+</body>
+</html>

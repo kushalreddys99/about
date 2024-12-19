@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Arisor Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #ff4b2b;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* About Us Section */
+    .about-us {
+      padding: 60px 20px;
+      background-color: white;
+      margin-top: 40px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 2.5rem;
+    }
+
+    .intro {
+      font-size: 1.2rem;
+      color: #555;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .about-details {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .about-section {
+      flex: 1;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-section h3 {
+      color: #ff4b2b;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .about-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .about-section ul li {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    /* Team Section */
+    .team {
+      padding: 60px 20px;
+      background-color: #f2f2f2;
+    }
+
+    .team h2 {
+      text-align: center;
+      color: #333;
+      font-size: 2.5rem;
+    }
+
+    .team p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      text-align: center;
+      background-color: #fff;
+      width: 250px;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .team-member h4 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .team-member p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .about-details {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .team-members {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .team-member {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1 class="logo">Arisor Solutions</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="about-us">
+    <div class="container">
+      <h2>About Arisor Solutions</h2>
+      <p class="intro">At Arisor Solutions, we are committed to providing top-quality fire safety equipment designed to protect lives and properties. Since our inception, we have been at the forefront of fire safety innovation, offering reliable products and services to homes, businesses, and industries worldwide.</p>
+
+      <div class="about-details">
+        <!-- Company Story -->
+        <div class="about-section">
+          <h3>Our Story</h3>
+          <p>Founded in 2010, Arisor Solutions started with a simple vision: to make fire safety accessible and effective for all. Over the years, we have expanded our range of products, refined our offerings, and built a strong reputation for exceptional quality and service. Today, we are proud to be a trusted name in the fire safety industry, committed to delivering innovative solutions that ensure peace of mind for our customers.</p>
+        </div>
+
+        <!-- Mission and Vision -->
+        <div class="about-section">
+          <h3>Our Mission</h3>
+          <p>Our mission is to provide the highest quality fire safety products that meet global standards, ensuring the safety of every life and every building we protect. We strive for excellence in everything we do, from product design to customer service.</p>
+
+          <h3>Our Vision</h3>
+          <p>To be the most trusted and reliable partner in fire safety solutions, continuously innovating to meet the ever-changing needs of our customers and contributing to a safer world.</p>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="about-section">
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li><strong>Certified Quality:</strong> All our products meet international safety standards.</li>
+            <li><strong>Durable and Reliable:</strong> Our products are designed to last and perform when you need them most.</li>
+            <li><strong>Customer Focused:</strong> We offer personalized service and solutions to meet unique needs.</li>
+            <li><strong>Global Reach:</strong> Serving customers worldwide, we are committed to providing the best fire safety equipment, no matter where you are.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Team Section -->
+  <section class="team">
+    <div class="container">
+      <h2>Meet Our Team</h2>
+      <p>Behind every successful project is a dedicated team of professionals. Our engineers, safety experts, and customer support staff work together to deliver the best results for our clients.</p>
+
+      <div class="team-members">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+          <img src="kulli.jpeg" alt="Madhusudhan C">
+          <h4>Madhusudhan C</h4>
+          <p>CEO & Founder</p>
+          <p>With over 20 years of experience in the fire safety industry, Madhusudhan the company with a vision of safety, innovation, and commitment to quality.</p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+          <img src="kush.jpeg" alt="Kushal Reddy">
+          <h4>Kushal Reddy</h4>
+          <p>Chief Operating Officer</p>
+          <p>Kushal oversees day-to-day operations, ensuring that Arisor Solutions operates smoothly and efficiently while maintaining high standards.</p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+          <img src="laskhmi.jpeg" alt="Lakshmikanth DM">
+          <h4>Lakshmikanth DM</h4>
+          <p>Safety Expert</p>
+          <p>With a background in fire safety engineering, Lakshmikanth ensures that all our products meet the highest safety and quality standards.</p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-member">
+          <img src="nagu.jpeg" alt="Nagabhushan">
+          <h4>Nagabhushan</h4>
+          <p>Marketing Director</p>
+          <p>Nagabhushan our marketing team, ensuring that our services reach the right audience and that our brand stands for trust and reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <p>&copy; 2024 Arisor Solutions. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

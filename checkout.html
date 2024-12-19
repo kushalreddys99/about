@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Arisor Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    main h2 {
+      text-align: center;
+      color: #333;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    table th, table td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    table td {
+      border-bottom: 1px solid #ddd;
+    }
+
+    table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .total-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .total-section .total {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #ff4b2b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #ff1d00;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Checkout</h1>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Your Order Summary</h2>
+    <!-- Order Table -->
+    <table id="cart-summary">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
+          <th>Total Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cart items will be dynamically added here -->
+      </tbody>
+    </table>
+
+    <!-- Total and Checkout -->
+    <div class="total-section">
+      <p class="total" id="order-total">Total: $0.00</p>
+      <a href="#" class="btn" onclick="placeOrder()">Place Order</a>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Arisor Solutions. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Retrieve cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartSummary = document.getElementById('cart-summary').getElementsByTagName('tbody')[0];
+    const orderTotal = document.getElementById('order-total');
+
+    // Function to display cart items
+    function displayCart() {
+      let total = 0;
+      cartSummary.innerHTML = '';
+
+      cart.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td>$${item.totalPrice}</td>
+        `;
+        cartSummary.appendChild(row);
+        total += parseFloat(item.totalPrice);
+      });
+
+      orderTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    // Place Order Function
+    function placeOrder() {
+      alert('Thank you for your order! Your items will be shipped shortly.');
+      localStorage.removeItem('cart'); // Clear cart data
+      window.location.href = 'index.html'; // Redirect to homepage
+    }
+
+    // Display the cart on page load
+    displayCart();
+  </script>
+</body>
+</html>

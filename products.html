@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Arisor Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Product Section Styling */
+    .products-section {
+      padding: 40px 20px;
+      background: white;
+    }
+
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .product-card .price {
+      color: #ff4b2b;
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
+
+    .product-card button {
+      background-color: #ff4b2b;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .product-card button:hover {
+      background-color: #ff1d00;
+    }
+
+    /* Cart Section */
+    .cart-section {
+      padding: 40px 20px;
+      background: #f1f1f1;
+    }
+
+    .cart-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-items li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-total {
+      font-size: 1.5rem;
+      color: #333;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #ff4b2b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    .checkout-btn:hover {
+      background-color: #ff1d00;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Arisor Solutions</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="products-container">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img src="1.jpg" alt="Portable Fire Extinguisher">
+          <h3>Portable Fire Extinguisher</h3>
+          <p class="price">$29.99</p>
+          <button onclick="addToCart('Portable Fire Extinguisher', 29.99)">Add to Cart</button>
+        </div>
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img src="3.webp" alt="Industrial Fire Extinguisher">
+          <h3>Industrial Fire Extinguisher</h3>
+          <p class="price">$99.99</p>
+          <button onclick="addToCart('Industrial Fire Extinguisher', 99.99)">Add to Cart</button>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img src="4.jpg" alt="Fire Blanket">
+          <h3>Fire Blanket</h3>
+          <p class="price">$15.99</p>
+          <button onclick="addToCart('Fire Blanket', 15.99)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section class="cart-section" id="cart-section" style="display:none;">
+    <div class="cart-container">
+      <h2>Your Cart</h2>
+      <ul class="cart-items" id="cart-items"></ul>
+      <p class="cart-total" id="cart-total">Total: $0.00</p>
+      <a href="checkout.html" class="checkout-btn" onclick="saveCart()">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <script>
+    let cart = [];
+
+    function addToCart(productName, price) {
+      const quantity = 1; // Default quantity is 1 when adding via button
+      const totalPrice = (price * quantity).toFixed(2);
+
+      cart.push({ name: productName, quantity, price: price, totalPrice });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartSection = document.getElementById('cart-section');
+      const cartItems = document.getElementById('cart-items');
+      const cartTotal = document.getElementById('cart-total');
+
+      cartSection.style.display = 'block';
+      cartItems.innerHTML = '';
+      let total = 0;
+
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.name} (x${item.quantity}) - $${item.totalPrice}`;
+        cartItems.appendChild(li);
+        total += parseFloat(item.totalPrice);
+      });
+
+      cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    }
+
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  </script>
+</body>
+</html>
